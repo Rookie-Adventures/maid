@@ -1,3 +1,0 @@
-- Port project to expo / react native
-- Add Markdown support
-- 
