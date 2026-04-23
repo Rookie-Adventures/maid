@@ -69,7 +69,17 @@ export function SystemContextProvider({ children }: { children: ReactNode }) {
     setVoice,
     colorScheme,
     accentColor,
-    setAccentColor
+    setAccentColor,
+    hermesUserId,
+    setHermesUserId,
+    level,
+    setLevel,
+    exp,
+    setExp,
+    inviteCount,
+    setInviteCount,
+    membershipTier,
+    setMembershipTier
   };
 
   return (
@@ -80,6 +90,14 @@ export function SystemContextProvider({ children }: { children: ReactNode }) {
 }
 
 export function useSystem() {
+  const context = useContext(SystemContext);
+
+  if (!context) {
+    throw new Error("useSystem must be used within a SystemContextProvider");
+  }
+
+  return context;
+}em() {
   const context = useContext(SystemContext);
 
   if (!context) {

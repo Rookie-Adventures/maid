@@ -95,9 +95,11 @@ export function LanguageModelProvider({ children }: { children: React.ReactNode 
             <MistralProvider>
               <DeepSeekProvider>
                 <NovitaProvider>
-                  <LanguageModelManagementProvider>
-                    {children}
-                  </LanguageModelManagementProvider>
+                  <HermesProvider>
+                    <LanguageModelManagementProvider>
+                      {children}
+                    </LanguageModelManagementProvider>
+                  </HermesProvider>
                 </NovitaProvider>
               </DeepSeekProvider>
             </MistralProvider>
@@ -119,3 +121,4 @@ export function useLLM() {
 }
 
 export { LanguageModelTypes } from "./types";
+ypes";

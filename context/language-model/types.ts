@@ -74,6 +74,14 @@ export type AnthropicContextProps = LanguageModelBaseProps & ModelMixin & BaseUr
 
 export type MistralContextProps = LanguageModelBaseProps & ModelMixin & BaseUrlMixin & ApiKeyMixin;
 
+export type HermesContextProps = LanguageModelBaseProps & ModelMixin & BaseUrlMixin & HeadersMixin & ApiKeyMixin & {
+  pairingCode: string | undefined;
+  setPairingCode: (code: string | undefined) => void;
+  isPaired: boolean;
+  skills: Array<string>;
+  fetchSkills: () => Promise<void>;
+};
+
 export type LanguageModelProps = 
 | LlamaContextProps 
 | OllamaContextProps 
@@ -81,7 +89,8 @@ export type LanguageModelProps =
 | AnthropicContextProps 
 | MistralContextProps 
 | DeepSeekContextProps
-| NovitaContextProps;
+| NovitaContextProps
+| HermesContextProps;
 
 export type LanguageModelContextProps = 
 & LanguageModelBaseProps 
